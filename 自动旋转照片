@@ -1,0 +1,10 @@
+from PIL import Image
+from PIL.ExifTags import TAGS
+
+img = Image.open(r'10L0251102.jpg')
+exif_data =img._getexif()
+print(exif_data)
+print(type(img))
+print (img.format,img.size,img.mode)
+for tag, value in exif_data.item():
+    print(TAGS.get(tag, tag), value)
